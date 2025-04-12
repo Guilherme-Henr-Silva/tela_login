@@ -9,6 +9,6 @@ function acessar(){
     }
 
     else{
-        
+        window.location.href = 'cadastro.html';
     }
 }
