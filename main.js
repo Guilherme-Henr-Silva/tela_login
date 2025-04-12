@@ -22,6 +22,7 @@ function salvarUser(){
     if (nomeUser){
         dadosLista.push(nomeUser);
         // console.log(dadosLista);
+        criaLista();
         document.getElementById('nomeUser').value = "";
     }
 
@@ -34,6 +35,13 @@ function salvarUser(){
 function criaLista(){
     let tabela = "<tr><th>Nome</th><th>Ações</th></tr>"
     for (let i = 0; i <= (dadosLista.length - 1); i++){
-        tabela += "<tr><td>" +dadosLista[i] + "</td> <td> </td></tr>";
+        tabela += "<tr><td>" +dadosLista[i] + "</td> <td><button class='btn btn-success'>Editar</button><button class='btn btn-danger' onclick='excluir(this.parentNode.parentNode.rowIndex)'>Excluir</button> </td></tr>";
+        document.getElementById('tabela').innerHTML = tabela;
     }
+}
+
+// Função para excluir nome da lista
+function excluir(i){
+    dadosLista.splice((i - 1), 1);
+    document.getElementById('tabela').deleteRow(i);
 }
