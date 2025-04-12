@@ -12,3 +12,20 @@ function acessar(){
         window.location.href = 'cadastro.html';
     }
 }
+
+// Declara array para o projeto
+var dadosLista = [];
+// Função de armazenamento de nomes em Array
+function salvarUser(){
+    let nomeUser = document.getElementById('nomeUser').value;
+
+    if (nomeUser){
+        dadosLista.push(nomeUser);
+        // console.log(dadosLista);
+        document.getElementById('nomeUser').value = "";
+    }
+
+    else{
+        alert("Favor preencher o campo!");
+    }
+}
